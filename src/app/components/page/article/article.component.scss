@@ -2,19 +2,13 @@
   list-style: none;
   padding-left: 0;
 
-
-  .flex:nth-child(2n) {
-    display: flex;
-    justify-content: space-around;
-  }
-
   .flex:nth-child(2n+1) {
-    display: flex;
-    justify-content: space-around;
     flex-direction: row-reverse;
   }
 
   .flex {
+    display: flex;
+    justify-content: space-around;
     width: 75%;
     margin: 0 auto 20px;
     border: 1px solid #ccc9c9;
@@ -28,20 +22,55 @@
       }
 
       img:hover {
-        opacity: 0.7;
+        opacity: 0.8;
       }
     }
 
     .left {
       width: 50%;
+      background-color: #f5eeee;
 
-      h2 {
+      .article-title {
         font-family: 'Indie Flower', cursive;
         font-size: 50px;
-        margin-left: 10px;
+        margin-left: 10%;
+      }
+
+      .article-description {
+        font-family: 'Raleway', sans-serif;
+        margin-left: 4%;
+        font-size: 20px;
+        margin-bottom: 6%;
+        max-width: 76%;
+      }
+
+      .article-button {
+        width: 39%;
+        padding: 2%;
+        border-radius: 19px;
+        font-family: 'Baskervville', serif;
+        font-size: 20px;
+        outline: none;
+        cursor: pointer;
+        background-color: #202065;
+        color: #fff;
+        font-weight: 100;
+        font-style: italic;
+        margin-left: 10%;
+        margin-bottom: 18%;
+      }
+
+      .article-button:hover {
+        background-color: #da3c30;
+      }
+
+      .article-text {
+        display: block;
+        font-family: 'Raleway', sans-serif;
+        font-size: 13px;
+        font-weight: 100;
+        margin-left: 1%;
       }
     }
   }
-
 }
-
