@@ -1,0 +1,14 @@
+<ul class="container">
+  <li class="flex" *ngFor="let item of articles">
+    <div class="right">
+      <img src="/assets/images/{{item.image}}" alt="No image">
+    </div>
+
+    <div class="left">
+      <h2>{{item.title}}</h2>
+      <p>{{item.description}}</p>
+      <button>Find your nearest store</button>
+      <span>{{item.descriptionText}}</span>
+    </div>
+  </li>
+</ul>
