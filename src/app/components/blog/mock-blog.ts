@@ -1,6 +1,6 @@
-import {Article} from './article';
+import {Blog} from './blog';
 
-export const ARTICLES: Article[] = [
+export const PLATES: Blog[] = [
   {
     title: 'Party girls',
     description: 'Outfits to take them from family dos to New Year countdowns',
