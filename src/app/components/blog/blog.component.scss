@@ -1,20 +1,17 @@
-.container {
+.wrapper {
   list-style: none;
   padding-left: 0;
 
-  .flex:nth-child(2n+1) {
+  .d-flex:nth-child(2n+1) {
     flex-direction: row-reverse;
   }
 
   .flex {
-    display: flex;
-    justify-content: space-around;
-    width: 75%;
-    margin: 0 auto 20px;
+    margin: 0 auto 9px;
     border: 1px solid #ccc9c9;
+    padding: 0 !important;
 
     .right {
-      width: 50%;
 
       img {
         width: 100%;
@@ -33,7 +30,7 @@
       .article-title {
         font-family: 'Indie Flower', cursive;
         font-size: 50px;
-        margin-left: 10%;
+        margin: 5% 0 4% 4%;
       }
 
       .article-description {
