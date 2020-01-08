@@ -1,0 +1,29 @@
+<ngb-carousel *ngIf="images" class="wrapper">
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper item">
+      <img [src]="images[0]" alt="Slide">
+    </div>
+    <div class="carousel-caption">
+      <h3>Party girls</h3>
+      <p>Outfits to take them from family dos to New Year countdowns</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper item">
+      <img [src]="images[1]" alt="Slide">
+    </div>
+    <div class="carousel-caption">
+      <h3>Christmas cuties</h3>
+      <p>Outfits to take them from family dos to New Year countdowns</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper item">
+      <img [src]="images[2]" alt="Slide">
+    </div>
+    <div class="carousel-caption">
+      <h3>Casting call</h3>
+      <p>Outfits to take them from family dos to New Year countdowns</p>
+    </div>
+  </ng-template>
+</ngb-carousel>
