@@ -15,6 +15,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { GraphicsComponent } from './components/graphics/graphics.component';
 import { TableComponent } from './components/table/table.component';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -31,12 +32,14 @@ import { TableComponent } from './components/table/table.component';
     AppRoutingModule,
     NgbCarouselModule,
     NgbModule,
+    RouterModule,
+    AppRoutingModule,
     MDBBootstrapModule.forRoot(),
     MatIconModule,
     IconsModule,
     ChartsModule,
     WavesModule,
-    TableModule
+    TableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
