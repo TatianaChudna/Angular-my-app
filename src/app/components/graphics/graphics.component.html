@@ -1,1 +1,41 @@
-<p>graphics works!</p>
+<div class=" background d-flex p-2 justify-content-around">
+  <div>
+    <canvas mdbChart
+            [chartType]="chartType"
+            [datasets]="chartDatasets"
+            [labels]="chartLabels"
+            [colors]="chartColors"
+            [options]="chartOptions"
+            [legend]="true"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)">
+    </canvas>
+  </div>
+
+  <div>
+    <canvas mdbChart
+            [chartType]="chartType1"
+            [datasets]="chartDatasets"
+            [labels]="chartLabels"
+            [colors]="chartColors"
+            [options]="chartOptions"
+            [legend]="true"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)">
+    </canvas>
+  </div>
+
+  <div>
+    <canvas mdbChart
+            [chartType]="chartType2"
+            [datasets]="chartDatasets2"
+            [labels]="chartLabels2"
+            [colors]="chartColors2"
+            [options]="chartOptions"
+            [legend]="true"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)">
+    </canvas>
+  </div>
+</div>
+
