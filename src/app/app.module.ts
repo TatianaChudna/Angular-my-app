@@ -13,6 +13,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { GraphicsComponent } from './components/graphics/graphics.component';
+import { TableComponent } from './components/table/table.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { GraphicsComponent } from './components/graphics/graphics.component';
     HeaderComponent,
     FooterComponent,
     GalleryComponent,
-    GraphicsComponent
+    GraphicsComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
