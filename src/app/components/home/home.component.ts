@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-graphics',
-  templateUrl: './graphics.component.html',
-  styleUrls: ['./graphics.component.scss']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
 })
-export class GraphicsComponent {
+export class HomeComponent {
 
   public chartType: string = 'line';
   public chartType1: string = 'radar';

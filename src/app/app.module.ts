@@ -13,7 +13,7 @@ import {BlogComponent} from './components/blog/blog.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
-import { GraphicsComponent } from './components/graphics/graphics.component';
+import { HomeComponent } from './components/home/home.component';
 import { TableComponent } from './components/table/table.component';
 import {RouterModule} from '@angular/router';
 
@@ -24,7 +24,7 @@ import {RouterModule} from '@angular/router';
     HeaderComponent,
     FooterComponent,
     GalleryComponent,
-    GraphicsComponent,
+    HomeComponent,
     TableComponent
   ],
   imports: [

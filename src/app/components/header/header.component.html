@@ -4,16 +4,13 @@
     <links>
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link waves-light" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
+          <a class="nav-link waves-light" mdbWavesEffect [routerLink]="routeHome">Home<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link waves-light" mdbWavesEffect>Graphics</a>
+          <a class="nav-link waves-light" mdbWavesEffect [routerLink]="routeGallery">Gallery</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link waves-light" mdbWavesEffect>Gallery</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link waves-light" mdbWavesEffect>List & table</a>
+          <a class="nav-link waves-light" mdbWavesEffect [routerLink]="routeTable">List & table</a>
         </li>
         <li class="nav-item">
           <a class="nav-link waves-light" mdbWavesEffect [routerLink]="routeBlog">Blog</a>
@@ -35,11 +32,10 @@
             <div class="btn-group" mdbDropdown>
               <mdb-icon fas icon="user" mdbDropdownToggle></mdb-icon>
               <div class="dropdown-menu dropdown-menu-right dropdown-primary">
-                <a class="dropdown-item" href="#">Home</a>
-                <a class="dropdown-item" href="#">Graphics</a>
-                <a class="dropdown-item" href="#">Gallery</a>
-                <a class="dropdown-item" href="#">List & table</a>
-                <a class="dropdown-item" href="#">Blog</a>
+                <a class="dropdown-item" href="#" [routerLink]="routeHome">Home</a>
+                <a class="dropdown-item" href="#" [routerLink]="routeGallery">Gallery</a>
+                <a class="dropdown-item" href="#" [routerLink]="routeTable">List & table</a>
+                <a class="dropdown-item" href="#" [routerLink]="routeBlog">Blog</a>
             </div>
             </div>
           </a>
