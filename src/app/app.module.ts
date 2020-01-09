@@ -10,8 +10,8 @@ import { AppComponent } from './app.component';
 import {BlogComponent} from './components/blog/blog.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { MainComponent } from './components/main/main.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
+import { GraphicsComponent } from './components/graphics/graphics.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +19,8 @@ import { GalleryComponent } from './components/gallery/gallery.component';
     BlogComponent,
     HeaderComponent,
     FooterComponent,
-    MainComponent,
-    GalleryComponent
+    GalleryComponent,
+    GraphicsComponent
   ],
   imports: [
     BrowserModule,
