@@ -4,6 +4,7 @@ import {NgbCarouselModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {MatIconModule} from '@angular/material/icon';
 import { IconsModule } from 'angular-bootstrap-md';
 
+import { TableModule } from 'angular-bootstrap-md';
 import { ChartsModule, WavesModule } from 'angular-bootstrap-md';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AppRoutingModule } from './app-routing.module';
@@ -34,7 +35,8 @@ import { TableComponent } from './components/table/table.component';
     MatIconModule,
     IconsModule,
     ChartsModule,
-    WavesModule
+    WavesModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
