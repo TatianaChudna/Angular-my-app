@@ -1,6 +1,7 @@
 .outline {
   list-style: none;
   padding-left: 0;
+  margin-bottom: 0;
 
   .d-flex:nth-child(2n+1) {
     flex-direction: row-reverse;
@@ -69,5 +70,9 @@
         margin-left: 1%;
       }
     }
+  }
+
+  .flex:last-child {
+    margin-bottom: 0;
   }
 }
