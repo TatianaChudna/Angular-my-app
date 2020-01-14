@@ -1,47 +1,52 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 import {NgbCarouselModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {MatIconModule} from '@angular/material/icon';
-import { IconsModule } from 'angular-bootstrap-md';
+import {IconsModule} from 'angular-bootstrap-md';
+import {TableModule} from 'angular-bootstrap-md';
+import {ChartsModule, WavesModule} from 'angular-bootstrap-md';
+import {MDBBootstrapModule} from 'angular-bootstrap-md';
 
-import { TableModule } from 'angular-bootstrap-md';
-import { ChartsModule, WavesModule } from 'angular-bootstrap-md';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import {BlogComponent} from './components/blog/blog.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { GalleryComponent } from './components/gallery/gallery.component';
-import { HomeComponent } from './components/home/home.component';
-import { TableComponent } from './components/table/table.component';
+import {AppRoutingModule} from './app-routing.module';
 import {RouterModule} from '@angular/router';
+
+import {AppComponent} from './app.component';
+import {HeaderComponent} from './components/header/header.component';
+import {HomeComponent} from './components/home/home.component';
+import {GalleryComponent} from './components/gallery/gallery.component';
+import {TableComponent} from './components/table/table.component';
+import {BlogComponent} from './components/blog/blog.component';
+import {FooterComponent} from './components/footer/footer.component';
+import {FormsModule} from '@angular/forms';
+import {ArticleComponent} from './components/blog/article/article.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BlogComponent,
     HeaderComponent,
-    FooterComponent,
-    GalleryComponent,
     HomeComponent,
-    TableComponent
+    GalleryComponent,
+    TableComponent,
+    BlogComponent,
+    FooterComponent,
+    ArticleComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbCarouselModule,
     NgbModule,
-    RouterModule,
-    AppRoutingModule,
-    MDBBootstrapModule.forRoot(),
+    BrowserModule,
+    NgbCarouselModule,
     MatIconModule,
     IconsModule,
+    TableModule,
     ChartsModule,
     WavesModule,
-    TableModule,
+    MDBBootstrapModule.forRoot(),
+    AppRoutingModule,
+    RouterModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

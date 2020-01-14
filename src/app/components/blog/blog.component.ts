@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {PLATES} from './mock-blog';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-blog',
@@ -7,12 +6,9 @@ import {PLATES} from './mock-blog';
   styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent implements OnInit {
-
-  public plates = PLATES;
-
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
-
 }

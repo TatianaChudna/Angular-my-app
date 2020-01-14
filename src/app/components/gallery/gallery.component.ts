@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {GalleryModel} from '../../models/gallery.model';
 
 @Component({
   selector: 'app-gallery',
@@ -6,8 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
- images = ['party_girl', 'christmas_cuties', 'casting_call', 'girls_clothing', 'boys_clothing'].map((n) => `/assets/images/${n}.jpeg`);
-  constructor() { }
+  public images: GalleryModel[];
+
+  constructor() {
+    this.images = [
+      new GalleryModel('party_girl.jpeg'),
+      new GalleryModel('christmas_cuties.jpeg'),
+      new GalleryModel('casting_call.jpeg')
+    ];
+  }
 
   ngOnInit() {
   }

@@ -1,21 +1,14 @@
 <header>
   <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark unique-color" [containerInside]="false">
-    <mdb-navbar-brand><a class="navbar-brand" href="#">Menu:</a></mdb-navbar-brand>
+    <mdb-navbar-brand class="navbar-brand">Menu:</mdb-navbar-brand>
     <links>
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link waves-light" mdbWavesEffect [routerLink]="routeHome">Home<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link waves-light" mdbWavesEffect [routerLink]="routeGallery">Gallery</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link waves-light" mdbWavesEffect [routerLink]="routeTable">List & table</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link waves-light" mdbWavesEffect [routerLink]="routeBlog">Blog</a>
+        <li class="nav-item" *ngFor="let list of lists">
+          <a class="nav-link waves-light" mdbWavesEffect routerLinkActive="active" routerLink="{{list.route}}"
+             [routerLinkActiveOptions]="{exact: true}">{{list.name}}<span class="sr-only">(current)</span></a>
         </li>
       </ul>
+
       <ul class="navbar-nav ml-auto nav-flex-icons">
         <li class="nav-item">
           <a class="nav-link">
@@ -32,11 +25,9 @@
             <div class="btn-group" mdbDropdown>
               <mdb-icon fas icon="user" mdbDropdownToggle></mdb-icon>
               <div class="dropdown-menu dropdown-menu-right dropdown-primary">
-                <a class="dropdown-item" href="#" [routerLink]="routeHome">Home</a>
-                <a class="dropdown-item" href="#" [routerLink]="routeGallery">Gallery</a>
-                <a class="dropdown-item" href="#" [routerLink]="routeTable">List & table</a>
-                <a class="dropdown-item" href="#" [routerLink]="routeBlog">Blog</a>
-            </div>
+                <a class="dropdown-item" href="#" *ngFor="let list of lists"
+                   routerLink="{{list.route}}">{{list.name}}</a>
+              </div>
             </div>
           </a>
         </li>
@@ -44,4 +35,3 @@
     </links>
   </mdb-navbar>
 </header>
-

@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {HeaderModel} from '../../models/header.model';
 
 @Component({
   selector: 'app-header',
@@ -6,12 +7,15 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  public routeHome = '/home';
-  public routeGallery = '/gallery';
-  public routeTable = '/table';
-  public routeBlog = '/blog';
+  public lists: HeaderModel[];
 
   constructor() {
+    this.lists = [
+      new HeaderModel('Home', '/home'),
+      new HeaderModel('Gallery', '/gallery'),
+      new HeaderModel('List & table', '/table'),
+      new HeaderModel('Blog', '/blog'),
+    ];
   }
 
   ngOnInit() {

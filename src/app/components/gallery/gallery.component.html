@@ -1,17 +1,7 @@
-<ngb-carousel *ngIf="images" class="gallery-container">
-  <ng-template ngbSlide>
+<ngb-carousel class="gallery-container">
+  <ng-template ngbSlide *ngFor="let item of images">
     <div class="picsum-img-wrapper item">
-      <img [src]="images[0]" alt="Slide">
-    </div>
-  </ng-template>
-  <ng-template ngbSlide>
-    <div class="picsum-img-wrapper item">
-      <img [src]="images[1]" alt="Slide">
-    </div>
-  </ng-template>
-  <ng-template ngbSlide>
-    <div class="picsum-img-wrapper item">
-      <img [src]="images[2]" alt="Slide">
+      <img src="/assets/images/{{item.image}}" alt="Slide">
     </div>
   </ng-template>
 </ngb-carousel>

@@ -1,0 +1,13 @@
+<ul class="outline">
+  <li class="flex d-flex p-2 col-example justify-content-around" *ngFor="let item of plates">
+    <div class="right">
+      <img src="/assets/images/{{item.image}}" alt="No image">
+    </div>
+    <div class="left">
+      <h2 class="article-title">{{item.title}}</h2>
+      <p class="article-description">{{item.description}}</p>
+      <button class="article-button">Find your nearest store</button>
+      <span class="article-text">{{item.descriptionText}}</span>
+    </div>
+  </li>
+</ul>
