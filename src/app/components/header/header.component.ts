@@ -15,6 +15,8 @@ export class HeaderComponent implements OnInit {
       new HeaderModel('Gallery', '/gallery'),
       new HeaderModel('List & table', '/table'),
       new HeaderModel('Blog', '/blog'),
+      new HeaderModel('Login', '/login'),
+      new HeaderModel('Registration', '/registration')
     ];
   }
 
