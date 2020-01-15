@@ -6,6 +6,12 @@ import {IconsModule} from 'angular-bootstrap-md';
 import {TableModule} from 'angular-bootstrap-md';
 import {ChartsModule, WavesModule} from 'angular-bootstrap-md';
 import {MDBBootstrapModule} from 'angular-bootstrap-md';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatCardModule} from '@angular/material/card';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatInputModule} from '@angular/material';
+import {MatButtonModule} from '@angular/material/button';
 
 import {AppRoutingModule} from './app-routing.module';
 import {RouterModule} from '@angular/router';
@@ -17,8 +23,9 @@ import {GalleryComponent} from './components/gallery/gallery.component';
 import {TableComponent} from './components/table/table.component';
 import {BlogComponent} from './components/blog/blog.component';
 import {FooterComponent} from './components/footer/footer.component';
-import {FormsModule} from '@angular/forms';
 import {ArticleComponent} from './components/blog/article/article.component';
+import {LoginComponent} from './components/login/login.component';
+import {RegistrationComponent} from './components/registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +36,9 @@ import {ArticleComponent} from './components/blog/article/article.component';
     TableComponent,
     BlogComponent,
     FooterComponent,
-    ArticleComponent
+    ArticleComponent,
+    LoginComponent,
+    RegistrationComponent
   ],
   imports: [
     NgbModule,
@@ -44,6 +53,12 @@ import {ArticleComponent} from './components/blog/article/article.component';
     AppRoutingModule,
     RouterModule,
     FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatCardModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
