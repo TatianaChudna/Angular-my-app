@@ -1,0 +1,52 @@
+<mat-card>
+  <mat-card-header>
+    <div class="user-container">
+      <h1>User form</h1>
+      <form class="user-form" [formGroup]="form.formGroup">
+        <mat-form-field>
+          <label>
+            <input type="text" matInput placeholder="Name" formControlName="name">
+          </label>
+          <mat-error *ngIf="form.formGroup.controls.name.invalid && form.formGroup.controls.name.touched">
+            Error name!
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <label>
+            <input type="text" matInput placeholder="Surname" formControlName="surname">
+          </label>
+          <mat-error *ngIf="form.formGroup.controls.surname.invalid && form.formGroup.controls.surname.touched">
+            Error surname!
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <label>
+            <input type="text" matInput placeholder="Email" formControlName="email">
+          </label>
+          <mat-error *ngIf="form.formGroup.controls.email.invalid && form.formGroup.controls.email.touched">
+            Error email!
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <label>
+            <input (input)="inputPassword($event)" type="password" matInput placeholder="Password"
+                   [value]="form.formGroup.controls.password.value">
+          </label>
+        </mat-form-field>
+        <mat-form-field>
+          <label>
+            <input type="text" matInput placeholder="Phone" formControlName="phone">
+          </label>
+          <mat-error *ngIf="form.formGroup.controls.phone.invalid && form.formGroup.controls.phone.touched">
+            Error phone!
+          </mat-error>
+        </mat-form-field>
+        <!--        {{form.formGroup.valid}}-->
+        {{form.formGroup.controls.password.value}}
+        <!--        {{form.formGroup.controls.firstName.touched}}-->
+        <!--        {{form.formGroup.controls.firstName.dirty}}-->
+        <button mat-raised-button color="primary">ENTER</button>
+      </form>
+    </div>
+  </mat-card-header>
+</mat-card>
