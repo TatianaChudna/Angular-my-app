@@ -8,7 +8,7 @@
             <input type="text" matInput placeholder="Name" formControlName="name">
           </label>
           <mat-error *ngIf="form.formGroup.controls.name.invalid && form.formGroup.controls.name.touched">
-            Error name!
+            Name must be at least 5 characters!
           </mat-error>
         </mat-form-field>
         <mat-form-field>
@@ -16,7 +16,7 @@
             <input type="text" matInput placeholder="Surname" formControlName="surname">
           </label>
           <mat-error *ngIf="form.formGroup.controls.surname.invalid && form.formGroup.controls.surname.touched">
-            Error surname!
+            Surname must be at least 5 characters!
           </mat-error>
         </mat-form-field>
         <mat-form-field>
@@ -24,13 +24,17 @@
             <input type="text" matInput placeholder="Email" formControlName="email">
           </label>
           <mat-error *ngIf="form.formGroup.controls.email.invalid && form.formGroup.controls.email.touched">
-            Error email!
+            Your email does not look right!
           </mat-error>
         </mat-form-field>
         <mat-form-field>
           <label>
-            <input (input)="inputPassword($event)" type="password" matInput placeholder="Password"
+            <input (input)="inputPassword($event)" (blur)="touchPasswordField()" type="password" matInput
+                   placeholder="Password"
                    [value]="form.formGroup.controls.password.value">
+            <mat-error *ngIf="form.formGroup.controls.password.invalid && form.formGroup.controls.password.touched">
+              Your email does not look right!
+            </mat-error>
           </label>
         </mat-form-field>
         <mat-form-field>
@@ -38,13 +42,9 @@
             <input type="text" matInput placeholder="Phone" formControlName="phone">
           </label>
           <mat-error *ngIf="form.formGroup.controls.phone.invalid && form.formGroup.controls.phone.touched">
-            Error phone!
+            The phone should consist only of numbers!
           </mat-error>
         </mat-form-field>
-        <!--        {{form.formGroup.valid}}-->
-        {{form.formGroup.controls.password.value}}
-        <!--        {{form.formGroup.controls.firstName.touched}}-->
-        <!--        {{form.formGroup.controls.firstName.dirty}}-->
         <button mat-raised-button color="primary">ENTER</button>
       </form>
     </div>

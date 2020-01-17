@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {RegistrationModel} from '../../models/registration.model';
 import RegistrationForm from './registration.form';
 
@@ -11,6 +11,7 @@ export class RegistrationComponent implements OnInit {
 
   private model: RegistrationModel;
   public form: RegistrationForm;
+
   constructor() {
     this.model = new RegistrationModel();
     this.form = new RegistrationForm(this.model);
@@ -20,15 +21,13 @@ export class RegistrationComponent implements OnInit {
   }
 
   public inputPassword(event: any): void {
-    // this.form.formGroup.setValue({
-    //   password: event.target.value,
-    //   firstName: '',
-    //   lastName: '',
-    //   email: ''
-    // });
 
     this.form.formGroup.patchValue({
       password: event.target.value
     });
+  }
+
+  public touchPasswordField(): void {
+    this.form.formGroup.controls.password.markAsTouched();
   }
 }

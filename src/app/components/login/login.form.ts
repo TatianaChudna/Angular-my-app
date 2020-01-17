@@ -26,12 +26,11 @@ export default class LoginForm {
         {
           validators: [Validators.required,
             Validators.minLength(7)],
-          updateOn: 'blur'
+          updateOn: 'change'
         })
     });
 
     this.formGroup.valueChanges.subscribe((data: any) => {
-      console.log(data);
       this.model.email = data.email;
       this.model.password = data.password;
     });

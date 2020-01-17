@@ -19,12 +19,11 @@ export default class RegistrationForm {
       name: new FormControl(this.model.name, {validators: [Validators.required, Validators.minLength(5)], updateOn: 'change'}),
       surname: new FormControl(this.model.surname, {validators: [Validators.required, Validators.minLength(5)], updateOn: 'change'}),
       email: new FormControl(this.model.email, {validators: [Validators.required, Validators.email], updateOn: 'change'}),
-      password: new FormControl(this.model.password, {validators: [Validators.required, Validators.pattern(/aa/)], updateOn: 'change'}),
-      phone: new FormControl(this.model.phone, {validators: [Validators.required, Validators.pattern(/aa/)], updateOn: 'change'})
+      password: new FormControl(this.model.password, {validators: [Validators.required, Validators.minLength(7)], updateOn: 'change'}),
+      phone: new FormControl(this.model.phone, {validators: [Validators.required, Validators.pattern('^[0-9]*$')], updateOn: 'change'})
     });
 
     this.formGroup.valueChanges.subscribe((data: any) => {
-      console.log(data);
       this.model.email = data.email;
       this.model.password = data.password;
       this.model.name = data.name;

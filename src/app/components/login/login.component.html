@@ -13,15 +13,16 @@
         </mat-form-field>
         <mat-form-field>
           <label>
-            <input (input)="inputPassword($event)" (blur)="touchPasswordField()" type="password" matInput
+            <input #userData (input)="inputPassword($event)" (blur)="touchPasswordField()" type="password" matInput
                    placeholder="Password"
                    [value]="form.formGroup.controls.password.value">
+            <mat-error *ngIf="form.formGroup.controls.password.invalid && form.formGroup.controls.password.touched">
+              Password must be at least 7 characters!
+            </mat-error>
           </label>
-          <mat-error *ngIf="form.formGroup.controls.password.invalid && form.formGroup.controls.password.touched">
-            Password must have min length 7.
-          </mat-error>
+
         </mat-form-field>
-        <button mat-raised-button color="primary">ENTER</button>
+        <button mat-raised-button color="primary" (click)="add(userData.value)">Login</button>
       </form>
     </div>
   </mat-card-header>
