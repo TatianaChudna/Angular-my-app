@@ -16,10 +16,10 @@ export default class RegistrationForm {
 
   public createForm() {
     this.formGroup = this.formBuilder.group({
-      name: new FormControl(this.model.name, {validators: [Validators.required, Validators.minLength(5)], updateOn: 'change'}),
-      surname: new FormControl(this.model.surname, {validators: [Validators.required, Validators.minLength(5)], updateOn: 'change'}),
+      name: new FormControl(this.model.name, {validators: [Validators.required, Validators.minLength(3)], updateOn: 'change'}),
+      surname: new FormControl(this.model.surname, {validators: [Validators.required, Validators.minLength(3)], updateOn: 'change'}),
       email: new FormControl(this.model.email, {validators: [Validators.required, Validators.email], updateOn: 'change'}),
-      password: new FormControl(this.model.password, {validators: [Validators.required, Validators.minLength(7)], updateOn: 'change'}),
+      password: new FormControl(this.model.password, {validators: [Validators.required, Validators.minLength(5)], updateOn: 'change'}),
       phone: new FormControl(this.model.phone, {validators: [Validators.required, Validators.pattern('^[0-9]*$')], updateOn: 'change'})
     });
 
@@ -30,25 +30,5 @@ export default class RegistrationForm {
       this.model.surname = data.surname;
       this.model.phone = data.phone;
     });
-  }
-
-  get name() {
-    return this.formGroup.get('name');
-  }
-
-  get surname() {
-    return this.formGroup.get('surname');
-  }
-
-  get email() {
-    return this.formGroup.get('email');
-  }
-
-  get password() {
-    return this.formGroup.get('password');
-  }
-
-  get phone() {
-    return this.formGroup.get('phone');
   }
 }

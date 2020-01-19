@@ -2,13 +2,13 @@
   <mat-card-header>
     <div class="user-container">
       <h1>User form</h1>
-      <form class="user-form" [formGroup]="form.formGroup">
+      <form class="user-form" [formGroup]="form.formGroup" (ngSubmit)="onSubmit()">
         <mat-form-field>
           <label>
             <input type="text" matInput placeholder="Name" formControlName="name">
           </label>
           <mat-error *ngIf="form.formGroup.controls.name.invalid && form.formGroup.controls.name.touched">
-            Name must be at least 5 characters!
+            Name must be at least 3 characters!
           </mat-error>
         </mat-form-field>
         <mat-form-field>
@@ -16,7 +16,7 @@
             <input type="text" matInput placeholder="Surname" formControlName="surname">
           </label>
           <mat-error *ngIf="form.formGroup.controls.surname.invalid && form.formGroup.controls.surname.touched">
-            Surname must be at least 5 characters!
+            Surname must be at least 3 characters!
           </mat-error>
         </mat-form-field>
         <mat-form-field>
@@ -33,7 +33,7 @@
                    placeholder="Password"
                    [value]="form.formGroup.controls.password.value">
             <mat-error *ngIf="form.formGroup.controls.password.invalid && form.formGroup.controls.password.touched">
-              Your email does not look right!
+              Password must be at least 5 characters!
             </mat-error>
           </label>
         </mat-form-field>
@@ -45,7 +45,8 @@
             The phone should consist only of numbers!
           </mat-error>
         </mat-form-field>
-        <button mat-raised-button color="primary">ENTER</button>
+        <button mat-raised-button color="primary">Registration</button>
+        <p>{{message}}</p>
       </form>
     </div>
   </mat-card-header>

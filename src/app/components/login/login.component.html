@@ -2,7 +2,7 @@
   <mat-card-header>
     <div class="user-container">
       <h1>Login form</h1>
-      <form class="user-form" [formGroup]="form.formGroup">
+      <form class="user-form" [formGroup]="form.formGroup" (ngSubmit)="onSubmit()">
         <mat-form-field>
           <label>
             <input type="text" matInput placeholder="Email" formControlName="email">
@@ -13,16 +13,19 @@
         </mat-form-field>
         <mat-form-field>
           <label>
-            <input #userData (input)="inputPassword($event)" (blur)="touchPasswordField()" type="password" matInput
+            <input (input)="inputPassword($event)" (blur)="touchPasswordField()" type="password" matInput
                    placeholder="Password"
                    [value]="form.formGroup.controls.password.value">
             <mat-error *ngIf="form.formGroup.controls.password.invalid && form.formGroup.controls.password.touched">
-              Password must be at least 7 characters!
+              Password must be at least 5 characters!
             </mat-error>
           </label>
-
         </mat-form-field>
-        <button mat-raised-button color="primary" (click)="add(userData.value)">Login</button>
+        <button mat-raised-button color="primary">Login</button>
+        <p class="guard"></p>
+        <div *ngIf="authorization()">
+          <button (click)="logout()" mat-raised-button color="primary">Logout</button>
+        </div>
       </form>
     </div>
   </mat-card-header>

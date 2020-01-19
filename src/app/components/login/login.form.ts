@@ -25,7 +25,7 @@ export default class LoginForm {
       password: new FormControl(this.model.password,
         {
           validators: [Validators.required,
-            Validators.minLength(7)],
+            Validators.minLength(3)],
           updateOn: 'change'
         })
     });
@@ -34,13 +34,5 @@ export default class LoginForm {
       this.model.email = data.email;
       this.model.password = data.password;
     });
-  }
-
-  get email() {
-    return this.formGroup.get('email');
-  }
-
-  get password() {
-    return this.formGroup.get('password');
   }
 }

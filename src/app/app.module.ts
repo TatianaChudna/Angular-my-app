@@ -29,6 +29,7 @@ import {LoginComponent} from './components/login/login.component';
 import {RegistrationComponent} from './components/registration/registration.component';
 
 import { CookieService } from 'ngx-cookie-service';
+import {AuthGuard} from './services/auth.guard';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,7 @@ import { CookieService } from 'ngx-cookie-service';
     MatInputModule,
     MatButtonModule
   ],
-  providers: [CookieService],
+  providers: [CookieService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {

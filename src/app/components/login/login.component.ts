@@ -1,22 +1,22 @@
 import {Component, OnInit} from '@angular/core';
 import {LoginModel} from '../../models/login.model';
 import LoginForm from './login.form';
-import {UserService} from '../../services/user.service';
+import {LoginService} from '../../services/login.service';
+import {CookiesService} from '../../services/cookies.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-  providers: [UserService]
+  providers: [LoginService]
 })
 export class LoginComponent implements OnInit {
 
   private model: LoginModel;
   public form: LoginForm;
-  public users: LoginModel[];
-  public editUser: LoginModel;
+  data: any;
 
-  constructor(private userService: UserService) {
+  constructor(private loginService: LoginService, private cookieService: CookiesService) {
     this.model = new LoginModel();
     this.form = new LoginForm(this.model);
   }
@@ -24,16 +24,25 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  public add(name: string): void {
-    this.editUser = undefined;
-    name = name.trim();
-    if (!name) {
-      return;
-    }
+  onSubmit() {
+    this.loginService.login(data => {
+      console.log('data', data);
+      this.data = data;
+      this.loginService.setData(data);
+      console.log('You are log in');
+    }, `"email":"${this.form.formGroup.controls.email.value}",  "password":"${this.form.formGroup.controls.password.value}"`);
+  }
 
-    this.userService
-      .addUser(this.model)
-      .subscribe(user => this.users.push(user));
+  authorization() {
+    // @ts-ignore
+    if (this.cookieService.getCookie('token')) {
+      return true;
+    }
+    return false;
+  }
+
+  logout() {
+    this.cookieService.deleteCookie('token');
   }
 
   public inputPassword(event: any): void {
