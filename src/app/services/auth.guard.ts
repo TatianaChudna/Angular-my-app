@@ -16,7 +16,7 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean> | boolean {
 
     // @ts-ignore
-    if (this.cookieService.getCookie('token')) {
+    if (localStorage.getItem('user')) {
       return true;
     } else {
       return false;

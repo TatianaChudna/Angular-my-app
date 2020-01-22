@@ -24,7 +24,7 @@
         <button mat-raised-button color="primary">Login</button>
         <p class="login">{{message}}</p>
         <div *ngIf="authorization()" class="logout">
-          <button (click)="logout()" mat-raised-button color="primary">Logout</button>
+          <button mat-raised-button color="primary" (click)="logout()">Logout</button>
         </div>
       </form>
     </div>

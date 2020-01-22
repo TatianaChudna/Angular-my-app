@@ -30,6 +30,7 @@ import {ArticleComponent} from './components/blog/article/article.component';
 import {LoginComponent} from './components/login/login.component';
 import {RegistrationComponent} from './components/registration/registration.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,5 +68,5 @@ import {RegistrationComponent} from './components/registration/registration.comp
   providers: [CookieService, AuthGuard],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+
+export class AppModule {}

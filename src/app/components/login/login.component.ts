@@ -14,8 +14,9 @@ export class LoginComponent implements OnInit {
 
   private model: LoginModel;
   public form: LoginForm;
-  data: any;
-  message: string;
+  public data: any;
+  public message: string;
+  user: { password: string; email: string };
 
   constructor(private loginService: LoginService, private cookieService: CookiesService) {
     this.model = new LoginModel();
@@ -26,10 +27,12 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
+    this.user = {email: this.form.formGroup.controls.email.value, password: this.form.formGroup.controls.password.value};
     this.loginService.login(data => {
       console.log('data', data);
       this.data = data;
       this.loginService.setData(data);
+      localStorage.setItem('user', JSON.stringify(this.user));
       this.cookieService.setCookie('token', data.token);
       this.message = 'You are log in';
     }, `"email":"${this.form.formGroup.controls.email.value}",  "password":"${this.form.formGroup.controls.password.value}"`);
@@ -37,13 +40,15 @@ export class LoginComponent implements OnInit {
 
   authorization() {
     // @ts-ignore
-    if (this.cookieService.getCookie('token')) {
+    const userDetails = JSON.parse(localStorage.getItem('user'));
+    if (userDetails) {
       return true;
     }
     return false;
   }
 
   logout() {
+    localStorage.removeItem('user');
     this.cookieService.deleteCookie('token');
   }
 
