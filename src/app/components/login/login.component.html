@@ -22,8 +22,8 @@
           </label>
         </mat-form-field>
         <button mat-raised-button color="primary">Login</button>
-        <p class="guard"></p>
-        <div *ngIf="authorization()">
+        <p class="login">{{message}}</p>
+        <div *ngIf="authorization()" class="logout">
           <button (click)="logout()" mat-raised-button color="primary">Logout</button>
         </div>
       </form>

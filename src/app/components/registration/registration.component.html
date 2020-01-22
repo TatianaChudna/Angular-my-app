@@ -30,8 +30,7 @@
         <mat-form-field>
           <label>
             <input (input)="inputPassword($event)" (blur)="touchPasswordField()" type="password" matInput
-                   placeholder="Password"
-                   [value]="form.formGroup.controls.password.value">
+                   placeholder="Password" [value]="form.formGroup.controls.password.value">
             <mat-error *ngIf="form.formGroup.controls.password.invalid && form.formGroup.controls.password.touched">
               Password must be at least 5 characters!
             </mat-error>

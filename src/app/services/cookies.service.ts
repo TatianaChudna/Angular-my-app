@@ -16,7 +16,7 @@ export class CookiesService {
   }
 
   getCookie(key: string) {
-    this.cookieService.get(key);
+    return this.cookieService.get(key);
   }
 
   deleteCookie(key: string) {

@@ -6,9 +6,10 @@ import {BlogModel} from '../../../models/blog.model';
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.scss']
 })
-
 export class ArticleComponent implements OnInit {
   public plates: BlogModel[];
+  public page: number = 1;
+  pageSize: number = 1;
 
   constructor() {
     this.plates = [

@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   private model: LoginModel;
   public form: LoginForm;
   data: any;
+  message: string;
 
   constructor(private loginService: LoginService, private cookieService: CookiesService) {
     this.model = new LoginModel();
@@ -29,7 +30,8 @@ export class LoginComponent implements OnInit {
       console.log('data', data);
       this.data = data;
       this.loginService.setData(data);
-      console.log('You are log in');
+      this.cookieService.setCookie('token', data.token);
+      this.message = 'You are log in';
     }, `"email":"${this.form.formGroup.controls.email.value}",  "password":"${this.form.formGroup.controls.password.value}"`);
   }
 

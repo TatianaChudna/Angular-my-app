@@ -13,9 +13,11 @@ import {MatCardModule} from '@angular/material/card';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material';
 import {MatButtonModule} from '@angular/material/button';
+import { CookieService } from 'ngx-cookie-service';
 
 import {AppRoutingModule} from './app-routing.module';
 import {RouterModule} from '@angular/router';
+import {AuthGuard} from './services/auth.guard';
 
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './components/header/header.component';
@@ -27,9 +29,6 @@ import {FooterComponent} from './components/footer/footer.component';
 import {ArticleComponent} from './components/blog/article/article.component';
 import {LoginComponent} from './components/login/login.component';
 import {RegistrationComponent} from './components/registration/registration.component';
-
-import { CookieService } from 'ngx-cookie-service';
-import {AuthGuard} from './services/auth.guard';
 
 @NgModule({
   declarations: [
