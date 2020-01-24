@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
+import {AuthGuard} from './services/auth.guard';
 
 import {HomeComponent} from './components/home/home.component';
 import {GalleryComponent} from './components/gallery/gallery.component';
@@ -7,10 +8,9 @@ import {TableComponent} from './components/table/table.component';
 import {BlogComponent} from './components/blog/blog.component';
 import {LoginComponent} from './components/login/login.component';
 import {RegistrationComponent} from './components/registration/registration.component';
-import {AuthGuard} from './services/auth.guard';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: '', redirectTo: '/home', pathMatch: 'full', canActivate: [AuthGuard]},
   {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
   {path: 'gallery', component: GalleryComponent, canActivate: [AuthGuard]},
   {path: 'table', component: TableComponent, canActivate: [AuthGuard]},
