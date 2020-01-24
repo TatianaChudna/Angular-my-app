@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {GalleryModel} from '../../models/gallery.model';
+import {GalleryModel} from '../../models/galleryModel';
+import {GalleryDescriptionModel} from '../../models/gallery-description.model';
 
 @Component({
   selector: 'app-gallery',
@@ -7,14 +8,10 @@ import {GalleryModel} from '../../models/gallery.model';
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
-  public images: GalleryModel[];
+  public descriptionModel: GalleryDescriptionModel = new GalleryDescriptionModel();
+  public model: GalleryModel = new GalleryModel();
 
   constructor() {
-    this.images = [
-      new GalleryModel('party_girl.jpeg'),
-      new GalleryModel('christmas_cuties.jpeg'),
-      new GalleryModel('casting_call.jpeg')
-    ];
   }
 
   ngOnInit() {
