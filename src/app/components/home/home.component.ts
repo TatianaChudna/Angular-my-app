@@ -7,17 +7,19 @@ import {Component} from '@angular/core';
 })
 export class HomeComponent {
 
-  public chartType: string = 'line';
-  public chartType1: string = 'radar';
-  public chartType2: string = 'bar';
+  public chartType = 'line';
+  public chartType1 = 'radar';
+  public chartType2 = 'bar';
 
   public chartDatasets: Array<any> = [
     {data: [65, 59, 80, 81, 56, 55, 40], label: 'First dataset'},
     {data: [28, 48, 40, 19, 86, 27, 90], label: 'Second dataset'}
   ];
+
   public chartDatasets2: Array<any> = [
     {data: [65, 59, 80, 81, 56, 55, 40], label: 'First dataset'}
   ];
+
   public chartLabels: Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
   public chartLabels2: Array<any> = ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'];
 
