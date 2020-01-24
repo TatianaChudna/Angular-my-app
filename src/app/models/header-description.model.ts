@@ -1,9 +1,4 @@
-export class Header {
+export class HeaderDescriptionModel {
   public name: string;
-  public route: any;
-
-  constructor(name: string, route: any) {
-    this.name = name;
-    this.route = route;
-  }
+  public route: string;
 }
