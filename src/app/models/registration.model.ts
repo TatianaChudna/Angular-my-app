@@ -1,7 +1,7 @@
 export class RegistrationModel {
-  email: string;
-  password: string;
-  name: string;
-  surname: string;
-  phone: number;
+  public email: string;
+  public password: string;
+  public name: string;
+  public surname: string;
+  public phone: number;
 }
