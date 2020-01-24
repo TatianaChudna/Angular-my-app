@@ -1,7 +1,7 @@
 <footer class="page-footer font-small teal pt-4">
   <div class="container-fluid text-center text-md-left">
     <div class="row">
-      <div class="col-md-6 mt-md-0 mt-3" *ngFor="let plate of plates">
+      <div class="col-md-6 mt-md-0 mt-3" *ngFor="let plate of model.plates">
         <h5 class="text-uppercase font-weight-bold">{{plate.title}}</h5>
         <p>{{plate.description}}</p>
       </div>
@@ -29,7 +29,7 @@
     <div class="row">
       <div class="col-md-12 py-5">
         <div class="mb-5 flex-center">
-          <a class="fb-ic" *ngFor="let item of icons">
+          <a class="fb-ic" *ngFor="let item of model.icons">
             <mdb-icon fab icon="{{item.icon}}" size="2x" class="white-text mr-md-5 mr-3"></mdb-icon>
           </a>
         </div>
