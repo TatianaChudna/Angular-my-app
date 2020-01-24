@@ -1,3 +1,3 @@
-export class List {
+export class ListDescriptionModel {
   public name: string;
 }
