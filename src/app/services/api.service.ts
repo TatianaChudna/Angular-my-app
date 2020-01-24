@@ -19,6 +19,7 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient) {}
 
+  // tslint:disable-next-line:max-line-length
   public post<TRequestBody, TResponseBody>(options: { httpOptions: { headers: HttpHeaders }; handlers: { success: any; error: any }; body: any; url: string }): any {
     return this.httpClient
       .post<TResponseBody>(this.apiUrl + options.url, options.body)
