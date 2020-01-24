@@ -1,17 +1,15 @@
-<ul class="outline">
-  <li class="flex d-flex p-2 col-example justify-content-around"
-      *ngFor="let item of plates | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
-    <div class="right">
-      <a href="/assets/images/{{item.image}}" download><img src="/assets/images/{{item.image}}" alt="No image"></a>
-    </div>
-    <div class="left">
-      <h2 class="article-title">{{item.title}}</h2>
-      <p class="article-description">{{item.description}}</p>
-      <button class="article-button">Find your nearest store</button>
-      <span class="article-text">{{item.descriptionText}}</span>
-    </div>
-  </li>
-</ul>
+<li class="flex d-flex p-2 col-example justify-content-around"
+    *ngFor="let item of model.articles | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+  <div class="right">
+    <img src="/assets/images/{{item.image}}" alt="{{item.alt}}">
+  </div>
+  <div class="left">
+    <h2 class="article-title">{{item.title}}</h2>
+    <p class="article-description">{{item.description}}</p>
+    <a href="/assets/images/{{item.image}}" class="button" download>Save image</a>
+    <button id="delete" class="button" mat-raised-button (click)="openDialog(item)">Delete article</button>
+  </div>
+</li>
 <ngb-pagination class="d-flex justify-content-center" [(page)]="page"
                 [pageSize]="pageSize"
-                [collectionSize]="plates.length"></ngb-pagination>
+                [collectionSize]="model.articles.length"></ngb-pagination>

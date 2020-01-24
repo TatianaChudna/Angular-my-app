@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {BlogModel} from '../../../models/blog.model';
+import {MatDialog} from '@angular/material';
+import {DialogComponent} from '../../dialog/dialog.component';
+import {ArticleModel} from '../../../models/articleModel';
+import {ArticleDescriptionModel} from '../../../models/article-description.model';
 
 @Component({
   selector: 'app-article',
@@ -7,22 +10,30 @@ import {BlogModel} from '../../../models/blog.model';
   styleUrls: ['./article.component.scss']
 })
 export class ArticleComponent implements OnInit {
-  public plates: BlogModel[];
-  public page: number = 1;
-  pageSize: number = 1;
+  public descriptionModel: ArticleDescriptionModel = new ArticleDescriptionModel();
+  public model: ArticleModel = new ArticleModel();
+  public page = 1;
+  public pageSize = 1;
 
-  constructor() {
-    this.plates = [
-      // tslint:disable-next-line:max-line-length
-      new BlogModel('Party girls', 'Outfits to take them from family dos to New Year countdowns', 'party_girl.jpeg', 'Black sequin dress from £18 | Navy dress and shrug set from £14'),
-      // tslint:disable-next-line:max-line-length
-      new BlogModel('Christmas cuties', 'Your little elves will look especially sweet in a festive palette of red and white', 'christmas_cuties.jpeg', 'Christmas jumpers from £8'),
-      // tslint:disable-next-line:max-line-length
-      new BlogModel('Casting call', 'Whether they\'re an angel or sheep number 3, they\'ll steal the show in our nativity costumes', 'casting_call.jpeg', 'Fairy £10 | Shepherd £10 | Star £8 | Angel £10 | Sheep £10')
-    ];
+  constructor(public dialog: MatDialog) {
+    this.model = new ArticleModel();
+  }
+
+  public openDialog(item): void {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      data: {
+        name: 'Do you want delete this article?'
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      const array = this.model.articles;
+      if (result === true) {
+        array.splice(array.indexOf(item), 1);
+      }
+    });
   }
 
   ngOnInit() {
   }
-
 }
