@@ -6,7 +6,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr mdbTableCol *ngFor="let el of elements">
+    <tr mdbTableCol *ngFor="let el of item.elements">
       <th scope="row">{{el.id}}</th>
       <td>{{el.first}}</td>
       <td>{{el.last}}</td>
@@ -14,7 +14,7 @@
     </tr>
     </tbody>
   </table>
-  <ul class="list-group list-group-flush" *ngFor="let item of listItem">
+  <ul class="list-group list-group-flush" *ngFor="let item of item.listItem">
     <li class="list-group-item">{{item.name}}</li>
   </ul>
 </div>
