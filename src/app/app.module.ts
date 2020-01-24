@@ -11,9 +11,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatInputModule} from '@angular/material';
+import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule, MatInputModule} from '@angular/material';
 import {MatButtonModule} from '@angular/material/button';
-import { CookieService } from 'ngx-cookie-service';
+import {CookieService} from 'ngx-cookie-service';
 
 import {AppRoutingModule} from './app-routing.module';
 import {RouterModule} from '@angular/router';
@@ -29,7 +29,7 @@ import {FooterComponent} from './components/footer/footer.component';
 import {ArticleComponent} from './components/blog/article/article.component';
 import {LoginComponent} from './components/login/login.component';
 import {RegistrationComponent} from './components/registration/registration.component';
-
+import {DialogComponent} from './components/dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -42,8 +42,10 @@ import {RegistrationComponent} from './components/registration/registration.comp
     FooterComponent,
     ArticleComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    DialogComponent
   ],
+  entryComponents: [DialogComponent],
   imports: [
     NgbModule,
     BrowserModule,
@@ -63,10 +65,12 @@ import {RegistrationComponent} from './components/registration/registration.comp
     MatCardModule,
     BrowserAnimationsModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule
   ],
-  providers: [CookieService, AuthGuard],
+  providers: [CookieService, AuthGuard, {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}],
   bootstrap: [AppComponent]
 })
 
-export class AppModule {}
+export class AppModule {
+}
