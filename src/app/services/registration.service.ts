@@ -16,7 +16,7 @@ export class RegistrationService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': 'token'
+        Authorization: 'token'
       })
     };
 
