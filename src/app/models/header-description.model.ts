@@ -1,4 +1,4 @@
-export class HeaderModel {
+export class Header {
   public name: string;
   public route: any;
 
