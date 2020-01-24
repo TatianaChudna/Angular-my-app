@@ -1,3 +1,3 @@
-export class Gallery {
+export class GalleryDescriptionModel {
   public image: string;
 }
