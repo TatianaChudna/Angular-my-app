@@ -10,13 +10,13 @@ import {CookiesService} from '../../services/cookies.service';
   styleUrls: ['./login.component.scss'],
   providers: [LoginService]
 })
-export class LoginComponent implements OnInit {
 
+export class LoginComponent implements OnInit {
   private model: LoginModel;
   public form: LoginForm;
   public data: any;
   public message: string;
-  user: { password: string; email: string };
+  public user: { password: string; email: string };
 
   constructor(private loginService: LoginService, private cookieService: CookiesService) {
     this.model = new LoginModel();
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit() {
+  public onSubmit() {
     this.user = {email: this.form.formGroup.controls.email.value, password: this.form.formGroup.controls.password.value};
     this.loginService.login(data => {
       console.log('data', data);
@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
     }, `"email":"${this.form.formGroup.controls.email.value}",  "password":"${this.form.formGroup.controls.password.value}"`);
   }
 
-  authorization() {
+  public authorization() {
     // @ts-ignore
     const userDetails = JSON.parse(localStorage.getItem('user'));
     if (userDetails) {
@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
     return false;
   }
 
-  logout() {
+  public logout() {
     localStorage.removeItem('user');
     this.cookieService.deleteCookie('token');
   }

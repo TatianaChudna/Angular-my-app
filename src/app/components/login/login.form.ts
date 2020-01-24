@@ -6,9 +6,7 @@ export default class LoginForm {
   public formGroup: FormGroup;
   public model: LoginModel;
 
-  constructor(
-    model: LoginModel,
-  ) {
+  constructor(model: LoginModel) {
     this.formBuilder = new FormBuilder();
     this.model = model;
     this.createForm();
