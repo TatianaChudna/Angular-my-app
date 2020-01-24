@@ -9,7 +9,6 @@ import {RegistrationService} from '../../services/registration.service';
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent implements OnInit {
-
   private model: RegistrationModel;
   public form: RegistrationForm;
   data: any;

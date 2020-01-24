@@ -6,9 +6,7 @@ export default class RegistrationForm {
   public formGroup: FormGroup;
   public model: RegistrationModel;
 
-  constructor(
-    model: RegistrationModel,
-  ) {
+  constructor(model: RegistrationModel) {
     this.formBuilder = new FormBuilder();
     this.model = model;
     this.createForm();
